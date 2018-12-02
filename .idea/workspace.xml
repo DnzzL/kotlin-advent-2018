@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8430b13c-d365-4291-8dab-102b019e353c" name="Default Changelist" comment="" />
+    <list default="true" id="8430b13c-d365-4291-8dab-102b019e353c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/tech/thomaslegrand/advent2018/Extensions.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/tech/thomaslegrand/advent2018/Day01.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/tech/thomaslegrand/advent2018/Day01.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/tech/thomaslegrand/advent2018/Day01Kt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/tech/thomaslegrand/advent2018/Day01Kt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/tech/thomaslegrand/advent2018/Resources.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/tech/thomaslegrand/advent2018/Resources.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/tech/thomaslegrand/advent2018/Day01.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/tech/thomaslegrand/advent2018/Day01.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/tech/thomaslegrand/advent2018/Resources.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/tech/thomaslegrand/advent2018/Resources.kt.kt" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -30,43 +39,53 @@
         <counts>
           <entry key="Day01" value="1" />
           <entry key="gradle" value="2" />
-          <entry key="kt" value="4" />
+          <entry key="kt" value="5" />
+          <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Groovy" value="2" />
-          <entry key="Kotlin" value="4" />
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Kotlin" value="5" />
+          <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gradle" value="50" />
-          <entry key="kt" value="821" />
+          <entry key="kt" value="1934" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="50" />
-          <entry key="Kotlin" value="821" />
+          <entry key="Kotlin" value="1934" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/tech/thomaslegrand/advent2018/Day01.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+            <state relative-caret-position="136">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/tech/thomaslegrand/advent2018/Extensions.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="69">
+              <caret line="3" column="49" lean-forward="true" selection-start-line="3" selection-start-column="49" selection-end-line="3" selection-end-column="49" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/tech/thomaslegrand/advent2018/Resources.kt">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/tech/thomaslegrand/advent2018/Resources.kt.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-33">
               <caret line="1" column="38" selection-start-line="1" selection-start-column="38" selection-end-line="1" selection-end-column="38" />
@@ -83,6 +102,9 @@
         <option value="Kotlin File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
@@ -512,8 +534,15 @@
         <option value="$PROJECT_DIR$/src/main/kotlin/tech/thomaslegrand/advent2018/Utils.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/tech/thomaslegrand/advent2018/Resources.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/tech/thomaslegrand/advent2018/Day01.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/tech/thomaslegrand/advent2018/Extensions.kt" />
       </list>
     </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="85" />
@@ -521,6 +550,7 @@
     <option name="width" value="1750" />
     <option name="height" value="970" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -589,7 +619,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543775870192" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543789351098" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
@@ -649,7 +679,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22818792" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22818792" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -659,7 +689,7 @@
       <window_info anchor="bottom" id="Messages" weight="0.3299566" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3299566" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3299566" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.27785817" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -676,7 +706,7 @@
       <window_info anchor="right" id="Gradle" order="5" />
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Maven Projects" order="8" />
+      <window_info anchor="right" id="Maven Projects" order="8" weight="0.3295302" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -703,13 +733,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Day01.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="964" column="7" selection-start-line="964" selection-start-column="7" selection-end-line="964" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/tech/thomaslegrand/advent2018/Utils.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -717,17 +740,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/tech/thomaslegrand/advent2018/Resources.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/tech/thomaslegrand/advent2018/Resources.kt.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-33">
           <caret line="1" column="38" selection-start-line="1" selection-start-column="38" selection-end-line="1" selection-end-column="38" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Day01.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22172">
+          <caret line="964" column="7" selection-start-line="964" selection-start-column="7" selection-end-line="964" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/tech/thomaslegrand/advent2018/Day01.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+        <state relative-caret-position="136">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/tech/thomaslegrand/advent2018/Extensions.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="49" lean-forward="true" selection-start-line="3" selection-start-column="49" selection-end-line="3" selection-end-column="49" />
         </state>
       </provider>
     </entry>
