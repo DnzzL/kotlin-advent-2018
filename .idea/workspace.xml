@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8430b13c-d365-4291-8dab-102b019e353c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/tech/thomaslegrand/advent2018/Extensions.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/tech/thomaslegrand/advent2018/Day01.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/tech/thomaslegrand/advent2018/Day01.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/tech/thomaslegrand/advent2018/Day01Kt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/tech/thomaslegrand/advent2018/Day01Kt.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/tech/thomaslegrand/advent2018/Resources.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/tech/thomaslegrand/advent2018/Resources.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/tech/thomaslegrand/advent2018/Day01.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/tech/thomaslegrand/advent2018/Day01.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/tech/thomaslegrand/advent2018/Resources.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/tech/thomaslegrand/advent2018/Resources.kt.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/tech/thomaslegrand/advent2018/Resources.kt.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/tech/thomaslegrand/advent2018/Resources.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -75,7 +73,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/tech/thomaslegrand/advent2018/Extensions.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="69">
@@ -84,11 +82,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/tech/thomaslegrand/advent2018/Resources.kt.kt">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/tech/thomaslegrand/advent2018/Resources.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-33">
-              <caret line="1" column="38" selection-start-line="1" selection-start-column="38" selection-end-line="1" selection-end-column="38" />
+            <state relative-caret-position="144">
+              <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -532,9 +533,9 @@
         <option value="$PROJECT_DIR$/src/test/kotlin/tech/thomaslegrand/advent2018/Day01.kt" />
         <option value="$PROJECT_DIR$/src/main/resources/Day01" />
         <option value="$PROJECT_DIR$/src/main/kotlin/tech/thomaslegrand/advent2018/Utils.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/tech/thomaslegrand/advent2018/Resources.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/tech/thomaslegrand/advent2018/Day01.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/tech/thomaslegrand/advent2018/Extensions.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/tech/thomaslegrand/advent2018/Resources.kt" />
       </list>
     </option>
   </component>
@@ -619,7 +620,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543789351098" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543789524792" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
@@ -740,13 +741,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/tech/thomaslegrand/advent2018/Resources.kt.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-33">
-          <caret line="1" column="38" selection-start-line="1" selection-start-column="38" selection-end-line="1" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/Day01.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22172">
@@ -765,6 +759,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
           <caret line="3" column="49" lean-forward="true" selection-start-line="3" selection-start-column="49" selection-end-line="3" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/tech/thomaslegrand/advent2018/Resources.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

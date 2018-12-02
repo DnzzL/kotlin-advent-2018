@@ -7,7 +7,7 @@ package tech.thomaslegrand.advent2018
  */
 
 fun main(args: Array<String>) {
-    val rawInput = `Resources.kt`.resourceAsList("Day01.txt")
+    val rawInput = Resources.resourceAsList("Day01.txt")
     val input = toListOfInt(rawInput)
     val dayOne = Day01(input)
 
