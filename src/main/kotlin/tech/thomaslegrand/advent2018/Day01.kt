@@ -1,5 +1,7 @@
 package tech.thomaslegrand.advent2018
 
+import kotlin.system.measureTimeMillis
+
 /**
  * Day 1: Chronal Calibration
  *
@@ -31,13 +33,15 @@ class Day01(val input: List<Int>) {
     fun solvePartTwo(): Int {
         var frequencies = mutableSetOf<Int>()
         var sum = 0
-        val finiteIntSequence = input.asSequence()
-        val infiniteIntSequence = finiteIntSequence.repeat()
-        infiniteIntSequence
-            .map { sum += it
-                sum
-            }
-            .first { !frequencies.add(it) }
+        val diff = measureTimeMillis {
+            input.repeat()
+                .map {
+                    sum += it
+                    sum
+                }
+                .first { !frequencies.add(it) }
+        }
+        println("Time(ms): $diff")
         return sum
     }
 }
