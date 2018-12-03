@@ -1,5 +1,6 @@
 package tech.thomaslegrand.advent2018
 
+
 /**
  * Day 2: Inventory Management System
  *
@@ -11,10 +12,10 @@ fun main(args: Array<String>) {
     val dayOne = Day02(input)
 
     val solvePartOne = dayOne.solvePartOne()
-    // val solvePartTwo = dayOne.solvePartTwo()
+    val solvePartTwo = dayOne.solvePartTwo()
     println("Day02:")
     println("  Part I:  $solvePartOne")
-    // println("  Part II:  $solvePartTwo")
+    println("  Part II:  $solvePartTwo")
 }
 
 
@@ -32,10 +33,20 @@ class Day02(val input: List<String>) {
         return counts.count { it.first } * counts.count { it.second }
     }
 
-    fun solvePartTwo(): Int {
-        input.map {
-            it.groupingBy { it }
-        }
-        return 0
+    fun solvePartTwo(): String {
+        val pairs = input.map { i ->
+            Pair(i,
+                input.find { j ->
+                    isMatchingPair(i, j)
+                }
+            )
+        }.first { it.second != null }
+        val commonLetters = pairs.first.zip(pairs.second!!).filter { it.first == it.second }
+        return commonLetters.map { it.first }.joinToString(separator = "")
+    }
+
+    private fun isMatchingPair(i: String, j: String): Boolean {
+        val diff = i.zip(j).filter { it.first != it.second }
+        return diff.size == 1
     }
 }
