@@ -1,8 +1,5 @@
 package tech.thomaslegrand.advent2018
 
-import java.time.LocalDateTime.parse
-import java.time.format.DateTimeFormatter
-
 /**
  * Day 4: Repose Record
  *
@@ -24,7 +21,7 @@ fun main(args: Array<String>) {
 class Day04(val input: List<String>) {
 
     fun solvePartOne(): Int {
-        var guardsDuties = mutableMapOf<Int, Int?>()
+        var mapGuardsSleptMinutes = mutableMapOf<Int, MutableList<Int>>()
         var currentGuard : Int? = null
         var sleepStart : Int? = null
         input
@@ -33,16 +30,17 @@ class Day04(val input: List<String>) {
                     log.contains("Guard") -> currentGuard = extractId(log)
                     log.contains("asleep") -> sleepStart = extractMinutes(log)
                     log.contains("wakes up") -> {
-                        val maxSleepTime = guardsDuties.getOrDefault(currentGuard!!, 0)
                         val wakeUpMinute = extractMinutes(log)
-                        val sleepTime = wakeUpMinute - sleepStart!!
-                        if (sleepTime > maxSleepTime!!) guardsDuties[currentGuard!!] = sleepStart
+                        val sleptMinutes = (sleepStart!! until wakeUpMinute).toMutableList()
+                        val guardSleepTimes = mapGuardsSleptMinutes.getOrPut(currentGuard!!) { sleptMinutes }
+                        mapGuardsSleptMinutes[currentGuard!!] = (sleptMinutes + guardSleepTimes).toMutableList()
                     }
                 }
             }
-        val sortedGuardsDuties = guardsDuties.toList().sortedBy { it.second }
-        println(sortedGuardsDuties)
-        return sortedGuardsDuties.last().first * sortedGuardsDuties.last().second!!
+        val sortedGuardsSleptMinutes = mapGuardsSleptMinutes.toList().sortedBy { (_, sleepTimes) -> sleepTimes.sum() }
+        val mostAsleepGuardId = sortedGuardsSleptMinutes.first().first
+        val mostAsleepMinute = sortedGuardsSleptMinutes.first().second.groupingBy { it }.eachCount().maxBy { it.value }!!.key
+        return mostAsleepGuardId * mostAsleepMinute
     }
 
     fun solvePartTwo(): Int {
