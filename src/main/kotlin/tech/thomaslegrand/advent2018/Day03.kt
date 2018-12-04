@@ -1,6 +1,5 @@
 package tech.thomaslegrand.advent2018
 
-
 /**
  * Day 3: No Matter How You Slice It
  *
@@ -31,19 +30,17 @@ class Day03(val input: List<String>) {
 
     fun solvePartTwo(): Int {
         val claims = input.map { Claim(it) }
-        val occupiedAreas =  mutableSetOf<Pair<Int, Int>>()
-        //occupiedAreas.addAll(claims.first().area())
-        var lastId = 0
-        claims
-            .asSequence()
-            .takeWhile {claim ->
-                occupiedAreas.isEmpty() or occupiedAreas.intersect(claim.area()).isNotEmpty()
-            }
-            .forEach {claim ->
-                lastId = claim.id
-                occupiedAreas.addAll(claim.area())
-            }
-        return lastId + 1
+        return claims
+            .find {claim1 ->
+                claims.all { claim2 ->
+                    !areOverlapping(claim1, claim2)
+                }
+            }!!.id
+    }
+
+    private fun areOverlapping(claim1: Claim, claim2: Claim): Boolean {
+        return if (claim1.equals(claim2)) false
+        else claim1.area().intersect(claim2.area()).isNotEmpty()
     }
 
 }
