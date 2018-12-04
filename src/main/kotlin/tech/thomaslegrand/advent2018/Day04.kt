@@ -1,5 +1,9 @@
 package tech.thomaslegrand.advent2018
 
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.util.*
+
 /**
  * Day 4: Repose Record
  *
@@ -22,9 +26,15 @@ class Day04(val input: List<String>) {
 
     fun solvePartOne(): Int {
         var mapGuardsSleptMinutes = mutableMapOf<Int, MutableList<Int>>()
-        var currentGuard : Int? = null
-        var sleepStart : Int? = null
+        var currentGuard: Int? = null
+        var sleepStart: Int? = null
         input
+            .sortedBy { log ->
+                LocalDateTime.parse(
+                    log.substringAfter("[").substringBefore("]"),
+                    DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")
+                )
+            }
             .forEach { log ->
                 when {
                     log.contains("Guard") -> currentGuard = extractId(log)
@@ -39,7 +49,8 @@ class Day04(val input: List<String>) {
             }
         val sortedGuardsSleptMinutes = mapGuardsSleptMinutes.toList().sortedBy { (_, sleepTimes) -> sleepTimes.sum() }
         val mostAsleepGuardId = sortedGuardsSleptMinutes.first().first
-        val mostAsleepMinute = sortedGuardsSleptMinutes.first().second.groupingBy { it }.eachCount().maxBy { it.value }!!.key
+        val mostAsleepMinute =
+            sortedGuardsSleptMinutes.first().second.groupingBy { it }.eachCount().maxBy { it.value }!!.key
         return mostAsleepGuardId * mostAsleepMinute
     }
 
@@ -47,7 +58,7 @@ class Day04(val input: List<String>) {
         return 0
     }
 
-    private fun extractId(log:String): Int =
+    private fun extractId(log: String): Int =
         log.substringAfter("#").substringBefore(" ").toInt()
 
     private fun extractMinutes(log: String): Int =
