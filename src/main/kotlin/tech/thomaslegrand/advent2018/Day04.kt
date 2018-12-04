@@ -1,9 +1,5 @@
 package tech.thomaslegrand.advent2018
 
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
-import java.util.*
-
 /**
  * Day 4: Repose Record
  *
@@ -25,37 +21,41 @@ fun main(args: Array<String>) {
 class Day04(val input: List<String>) {
 
     fun solvePartOne(): Int {
-        var mapGuardsSleptMinutes = mutableMapOf<Int, MutableList<Int>>()
-        var currentGuard: Int? = null
-        var sleepStart: Int? = null
-        input
-            .sortedBy { log ->
-                LocalDateTime.parse(
-                    log.substringAfter("[").substringBefore("]"),
-                    DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")
-                )
+        val mapGuardsSleptMinutes = getSleptMinutesPerGuard()
+        return mapGuardsSleptMinutes.maxBy { it.value.size }
+            .run { this!!.key * value.groupBy { it }.maxBy { it.value.size }?.key!! }
+    }
+
+    fun solvePartTwo(): Int {
+        val mapGuardsSleptMinutes = getSleptMinutesPerGuard()
+        return mapGuardsSleptMinutes
+            .flatMap { el ->
+                el.value.map { minute ->
+                    el.key to minute
+                }
             }
+            .groupBy { it }.maxBy { it.value.size }?.key!!
+            .run { first * second }
+    }
+
+    private fun getSleptMinutesPerGuard(): MutableMap<Int, List<Int>> {
+        val mapGuardsSleptMinutes = mutableMapOf<Int, List<Int>>()
+        var currentGuard = 0
+        var sleepStart = 0
+        input
+            .sorted()
             .forEach { log ->
                 when {
                     log.contains("Guard") -> currentGuard = extractId(log)
                     log.contains("asleep") -> sleepStart = extractMinutes(log)
-                    log.contains("wakes up") -> {
+                    else -> {
                         val wakeUpMinute = extractMinutes(log)
-                        val sleptMinutes = (sleepStart!! until wakeUpMinute).toMutableList()
-                        val guardSleepTimes = mapGuardsSleptMinutes.getOrPut(currentGuard!!) { sleptMinutes }
-                        mapGuardsSleptMinutes[currentGuard!!] = (sleptMinutes + guardSleepTimes).toMutableList()
+                        val sleptMinutes = (sleepStart until wakeUpMinute).toMutableList()
+                        mapGuardsSleptMinutes.merge(currentGuard, sleptMinutes) { a, b -> a + b }
                     }
                 }
             }
-        val sortedGuardsSleptMinutes = mapGuardsSleptMinutes.toList().sortedBy { (_, sleepTimes) -> sleepTimes.sum() }
-        val mostAsleepGuardId = sortedGuardsSleptMinutes.first().first
-        val mostAsleepMinute =
-            sortedGuardsSleptMinutes.first().second.groupingBy { it }.eachCount().maxBy { it.value }!!.key
-        return mostAsleepGuardId * mostAsleepMinute
-    }
-
-    fun solvePartTwo(): Int {
-        return 0
+        return mapGuardsSleptMinutes
     }
 
     private fun extractId(log: String): Int =
