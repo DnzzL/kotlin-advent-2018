@@ -10,10 +10,10 @@ fun main(args: Array<String>) {
     val input = Resources.resourceAsString("Day05.txt")
     val day = Day05(input)
 
-    //val solvePartOne = day.solvePartOne()
+    val solvePartOne = day.solvePartOne()
     val solvePartTwo = day.solvePartTwo()
     println("Day05:")
-    //println("  Part I:  $solvePartOne")
+    println("  Part I:  $solvePartOne")
     println("  Part II:  $solvePartTwo")
 }
 
@@ -28,13 +28,17 @@ class Day05(val input: String) {
         return remainingPolymer.length
     }
 
-
     fun solvePartTwo(): Int {
-        return ('A'..'Z')
+        val polymerSizes = mutableListOf<Int>()
+        ('A'..'Z')
             .map {
-                doReactions(input, it).length
+                var remainingPolymer = input
+                while (isRemainingReaction(remainingPolymer)) {
+                    remainingPolymer = doReactions(remainingPolymer, it)
+                }
+                polymerSizes.add(remainingPolymer.length)
             }
-            .min()!!
+        return polymerSizes.min()!!
     }
 
     private fun isReaction(a: Char, b: Char): Boolean =
@@ -51,13 +55,14 @@ class Day05(val input: String) {
         }
 
     private fun doReactions(polymer: String, ignoring: Char? = null): String {
-        var remainingPolymer = polymer.replace(ignoring?.toLowerCase().toString(), "").replace(ignoring?.toUpperCase().toString(), "")
+        var remainingPolymer =
+            polymer.replace(ignoring?.toLowerCase().toString(), "").replace(ignoring?.toUpperCase().toString(), "")
         val letters = input.toCharArray().map { it.toLowerCase() }.toSet()
         letters.map {
             remainingPolymer = remainingPolymer.replace(it.toString().plus(it.toUpperCase()), "")
             remainingPolymer = remainingPolymer.replace(it.toUpperCase().plus(it.toString()), "")
         }
 
-    return remainingPolymer
+        return remainingPolymer
     }
 }
