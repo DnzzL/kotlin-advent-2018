@@ -6,7 +6,7 @@ package tech.thomaslegrand.advent2018
 
 import java.io.File
 
-internal object Resources {
+object Resources {
     fun resourceAsString(fileName: String, delimiter: String = ""): String =
         File(Resources.javaClass.classLoader.getResource(fileName).toURI())
             .readLines()

@@ -8,11 +8,11 @@ package tech.thomaslegrand.advent2018
 
 fun main(args: Array<String>) {
     val input = Resources.resourceAsList("Day04.txt")
-    val dayFour = Day04(input)
+    val day = Day04(input)
 
-    val solvePartOne = dayFour.solvePartOne()
-    val solvePartTwo = dayFour.solvePartTwo()
-    println("Day03:")
+    val solvePartOne = day.solvePartOne()
+    val solvePartTwo = day.solvePartTwo()
+    println("Day04:")
     println("  Part I:  $solvePartOne")
     println("  Part II:  $solvePartTwo")
 }

@@ -11,10 +11,10 @@ import kotlin.system.measureTimeMillis
 fun main(args: Array<String>) {
     val rawInput = Resources.resourceAsList("Day01.txt")
     val input = toListOfInt(rawInput)
-    val dayOne = Day01(input)
+    val day = Day01(input)
 
-    val solvePartOne = dayOne.solvePartOne()
-    val solvePartTwo = dayOne.solvePartTwo()
+    val solvePartOne = day.solvePartOne()
+    val solvePartTwo = day.solvePartTwo()
     println("Day01.txt:")
     println("  Part I:  $solvePartOne")
     println("  Part II:  $solvePartTwo")
