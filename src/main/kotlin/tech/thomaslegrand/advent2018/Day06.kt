@@ -26,15 +26,17 @@ class Day06(val input: List<String>) {
         val listCoordinates = input.map {
             Point(it.substringBefore(",").toInt(), it.substringAfter(" ").toInt())
         }
-        return (listCoordinates.minBy { it.x }!!.x..listCoordinates.maxBy { it.x }!!.x).flatMap { x ->
+        val listAllPoints = (listCoordinates.minBy { it.x }!!.x..listCoordinates.maxBy { it.x }!!.x).flatMap { x ->
             (listCoordinates.minBy { it.y }!!.y..listCoordinates.maxBy { it.y }!!.y).map { y ->
                 Pair(x, y)
             }.toList()
-        }.map {
+        }
+        return listAllPoints.map {
             Point(it.first, it.second).closestPoint(listCoordinates)
-        }.filter {
-            it.isSurrounded(listCoordinates, 200)
-        }.groupingBy { it }.eachCount().also { println(it) }.maxBy { it.value }!!.value
+        }.filterNotNull()
+            .filter {
+                it.isSurrounded(listCoordinates)
+            }.groupingBy { it }.eachCount().maxBy { it.value }!!.value
     }
 
     fun solvePartTwo(): Int {
@@ -49,8 +51,10 @@ private fun Point.manhattanDistanceTo(coord2: Point): Int {
     return abs(this.x - coord2.x) + abs(this.y - coord2.y)
 }
 
-private fun Point.closestPoint(listPoints: List<Point>): Point {
-    return listPoints.minBy { this.manhattanDistanceTo(it) }!!
+private fun Point.closestPoint(listPoints: List<Point>): Point? {
+    val possiblePoints = listPoints.map { it to this.manhattanDistanceTo(it) }
+    val minDistance = possiblePoints.minBy { it.second }!!
+    return if (possiblePoints.count { it.second == minDistance.second } > 1) null else minDistance.first
 }
 
 private fun Point.isSurrounded(listPoints: List<Point>): Boolean {
