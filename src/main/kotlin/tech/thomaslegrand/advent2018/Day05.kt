@@ -22,8 +22,8 @@ class Day05(val input: String) {
 
     fun solvePartOne(): Int {
         var remainingPolymer = input
-        while (isRemainingReaction(remainingPolymer)) {
-            remainingPolymer = doReactions(remainingPolymer)
+        while (reactionDone(remainingPolymer).first) {
+            remainingPolymer = reactionDone(remainingPolymer).second
         }
         return remainingPolymer.length
     }
@@ -33,28 +33,15 @@ class Day05(val input: String) {
         ('A'..'Z')
             .map {
                 var remainingPolymer = input
-                while (isRemainingReaction(remainingPolymer)) {
-                    remainingPolymer = doReactions(remainingPolymer, it)
+                while (reactionDone(remainingPolymer, it).first) {
+                    remainingPolymer = reactionDone(remainingPolymer, it).second
                 }
                 polymerSizes.add(remainingPolymer.length)
             }
         return polymerSizes.min()!!
     }
 
-    private fun isReaction(a: Char, b: Char): Boolean =
-        when {
-            a.isLowerCase() and b.isUpperCase() -> a.toLowerCase() == b.toLowerCase()
-            a.isUpperCase() and b.isLowerCase() -> a.toLowerCase() == b.toLowerCase()
-            else -> false
-        }
-
-
-    private fun isRemainingReaction(polymer: String): Boolean =
-        polymer.asSequence().zipWithNext().any {
-            isReaction(it.first, it.second)
-        }
-
-    private fun doReactions(polymer: String, ignoring: Char? = null): String {
+    private fun reactionDone(polymer: String, ignoring: Char? = null): Pair<Boolean, String> {
         var remainingPolymer =
             polymer.replace(ignoring?.toLowerCase().toString(), "").replace(ignoring?.toUpperCase().toString(), "")
         val letters = input.toCharArray().map { it.toLowerCase() }.toSet()
@@ -63,6 +50,6 @@ class Day05(val input: String) {
             remainingPolymer = remainingPolymer.replace(it.toUpperCase().plus(it.toString()), "")
         }
 
-        return remainingPolymer
+        return Pair(remainingPolymer.length != polymer.length, remainingPolymer)
     }
 }
