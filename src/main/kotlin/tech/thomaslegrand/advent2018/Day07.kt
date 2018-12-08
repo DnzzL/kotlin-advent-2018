@@ -42,6 +42,7 @@ class Day07(val input: List<String>) {
 
         var correctOrder = ""
         while (dependencies.isNotEmpty()) {
+            // Part 1
             val letter = dependencies.filter {
                 !it.key.hasDependencies(dependencies)
             }.toSortedMap().keys.first()
