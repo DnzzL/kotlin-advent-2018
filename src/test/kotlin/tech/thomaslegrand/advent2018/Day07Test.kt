@@ -12,7 +12,7 @@ internal class Day07Test {
 
     @Test
     fun solvePartOne() {
-        Assert.assertEquals(day.solvePartOne(), "HFGABCDE")
+        Assert.assertEquals(day.solvePartOne(), "CABDFE")
     }
 
     @Test
